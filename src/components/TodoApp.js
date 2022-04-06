@@ -36,19 +36,19 @@ const todos = [
 function TodoApp() {
   const handleClick = (e) => {
     console.log (e.target);
+    e.target.classList.add('done')
   }
   return (
     <ul>
-      {
-        todos.map(todo => (
-            <Todo 
-              key={todo.id} 
-              todo={todo} 
-              handleClick={handleClick}
-           /> 
+    {
+        todos.map((todo, index) => (
+            index % 2
+                ? <Todo key={todo.id} todo={todo} handleClick={handleClick} className=""/>
+                : <Todo key={todo.id} todo={todo} handleClick={handleClick} className="odd" />
+
         ))
-      }
-    </ul>
+    }
+  </ul>
   )
 }
 

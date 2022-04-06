@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Todo({todo, handleClick}) {
+function Todo({todo, handleClick, className}) {
   return (
-    <li onClick={handleClick}>{todo.task}</li>
+    <li onClick={handleClick} className={className}>{todo.task}</li>
   )
 }
 
