@@ -1,4 +1,5 @@
 import React from 'react';
+import Todo from './Todo';
 
 /**
  * Part 1: Generate list (See Lists and keys lecture)
@@ -31,11 +32,21 @@ const todos = [
 
 
 
+
 function TodoApp() {
+  const handleClick = (e) => {
+    console.log (e.target);
+  }
   return (
     <ul>
       {
-        todos.map(todo => <li>{todo.task}</li> )
+        todos.map(todo => (
+            <Todo 
+              key={todo.id} 
+              todo={todo} 
+              handleClick={handleClick}
+           /> 
+        ))
       }
     </ul>
   )
